@@ -1,10 +1,11 @@
-<?php namespace Acme\Reporting;
+<?php
 
-use Acme\Reporting\SalesOutputInterface;
+namespace Acme\Reporting;
 
-class HtmlOutput implements SalesOutputInterface {
-  public function output($sales)
-  {
-    return "<h1>Sales: $sales</h1>";
-  }
+class HtmlOutput implements SalesOutputInterface
+{
+    public function output($sales)
+    {
+        return "<h1>Sales: $sales</h1>";
+    }
 }

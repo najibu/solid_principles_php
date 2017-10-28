@@ -1,5 +1,8 @@
-<?php namespace Acme\Reporting;
+<?php
 
-interface SalesOutputInterface {
-  public function output($sales);
+namespace Acme\Reporting;
+
+interface SalesOutputInterface
+{
+    public function output($sales);
 }

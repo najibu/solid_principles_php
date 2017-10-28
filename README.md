@@ -6,6 +6,9 @@ SOLID represents a series of guidelines that developers can use to, if done well
 
 1. Single Responsibility <br />
 The most popular of the SOLID design principles, the single responsibility principle dictates that a class should have only one reason to change.
+Another way to put it is that a class should exactly have one job.
+A class should a single responsibility, if it has too many responsibilities its doing too much at which point extract some of these responsibilities into there own classes and there own responsibilities.
+Another way to think about it is that a class has too many consumers.
 <br />
 
 2. Open-Closed <br />

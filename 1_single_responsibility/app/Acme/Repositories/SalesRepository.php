@@ -1,10 +1,15 @@
-<?php namespace  Acme\Repositories;
+<?php
+
+namespace Acme\Repositories;
 
 use DB;
 
-class SalesRepository {
-  public function between($startDate, $endDate)
-  {
-    return DB::table('sales')->whereBetween('created_at', [$startDate, $endDate])->sum('charge') / 100;
-  }
- } 
+class SalesRepository
+{
+    public function between($startDate, $endDate)
+    {
+        return DB::table('sales')
+                ->whereBetween('created_at', [$startDate, $endDate])
+                ->sum('charge') / 100;
+    }
+}
