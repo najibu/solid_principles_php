@@ -1,16 +1,18 @@
-<?php namespace Acme;
+<?php
 
-class Circle implements Shape {
+namespace Acme;
 
-  protected $radius;
+class Circle implements Shape
+{
+    protected $radius;
 
-  public function __construct($radius)
-  {
-    $this->radius = $radius;
-  }
+    public function __construct($radius)
+    {
+        $this->radius = $radius;
+    }
 
-  public function area()
-  {
-    return $this->radius * $this->radius * pi(); 
-  }
+    public function area()
+    {
+        return $this->radius * $this->radius * pi();
+    }
 }

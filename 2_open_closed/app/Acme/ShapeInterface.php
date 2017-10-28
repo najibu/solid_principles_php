@@ -1,5 +1,8 @@
-<?php namespace Acme;
+<?php
 
-interface Shape {
-  public function area();
+namespace Acme;
+
+interface Shape
+{
+    public function area();
 }

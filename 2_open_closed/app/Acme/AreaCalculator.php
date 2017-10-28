@@ -1,16 +1,15 @@
-<?php namespace Acme;
+<?php
 
-class AreaCalculator {
+namespace Acme;
 
-  public function calculate($shapes)
-  {
+class AreaCalculator
+{
+    public function calculate($shapes)
+    {
+        foreach ($shapes as $shape) {
+            $area[] = $shape->area();
+        }
 
-    foreach ($shapes as $shape) {
-      
-      $area[] = $shape->area();
+        return array_sum($area);
     }
-
-    return array_sum($area);
-  }
-
 }

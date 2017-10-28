@@ -12,6 +12,12 @@ Another way to think about it is that a class has too many consumers.
 <br />
 
 2. Open-Closed <br />
+Entities should be open for extension, but closed for modification.
+Open for extension: means it should be simple to change the behaviour of a particular entity e.g. a class.
+Closed for modification: means change behaviour without modifying source code.
+Avoid code rot.
+When you have a module that you want to extend without modifying: separate extensible behaviour behind an interface, and flip the dependencies.
+Polymorphism: the ability to have different behaviour while still sharing a common interface.
 This is one of those principles that developers often skip over. Don't! These techniques are paramount to mature design.
 <br />
 
