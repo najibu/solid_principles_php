@@ -23,6 +23,15 @@ This is one of those principles that developers often skip over. Don't! These te
 
 3. Liskov Substitution <br />
 Coined by Barbara Liskov, this principle states that any implementation of an abstraction (interface) should be substitutable in any place that the abstraction is accepted.
+Mathematical definition: Let q(x) be a property provable about objects x of type T.
+Then q(y) should be provable for objects y of type S where S is a subtype of T.
+Everytime you prepare a subclass: Derived classes must be substitutable for their base classes.
+Always make sure the output of your implementation match what is specified in the contract.
+Conclusion:
+1. Signature must match
+2. Preconditions can't be greater
+3. Post conditions at least equal to
+4. Exception types must match
 <br />
 
 4. Interface Segregation <br />

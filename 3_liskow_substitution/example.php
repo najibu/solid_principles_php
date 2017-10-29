@@ -1,80 +1,93 @@
-<?php 
-// Liskow Substituion Principle
+<?php
+/* Liskow Substitution Principle */
 
-function(SomeInterface $obj) {
+function (SomeInterface $obj)
+{
 
 }
 
-// ---Start
+/* Start */
 // Derived classes must be substitutable for their base classes.
+class A
+{
+    public function fire()
+    {
 
-class A {
-  public function fire(){};
+    }
 }
 
 // According to the principle we should be about to use B anywhere that A is accepted.
 
-class B extends A {
-  public function fire(){};
+class B extends A
+{
+    public function fire()
+    {
+
+    }
 }
 
 function doSomething(A $obj)
 {
-  // do something with it
-}
-// ---End
-
-
-// ---Start
-class VideoPlayer {
-  public function play($file)
-  {
-    // play the video
-  }
+    // do something with it
 }
 
-class AviVideoPlayer extends VideoPlayer {
-  public function play($file)
-  {
-    if (pathinfo($file, PATHINFO_EXTENSION) !== 'avi') {
-      throw new Exception; // violates the LSP
-    }
-  }
-}
+/* End */
 
-// ---End
-
-
-// ---Start
-
-interface LessonRepositoryInterface {
-  /**
-   * Fetch all records
-   * @return array   
-   * 
-   */
-  public function getAll();
-}
-
-class FileLessonRepository implements LessonRepositoryInterface {
-  public function getAll()
-  {
-    // return through filesystem 
-    return [];
-  }
-}
-
-class DbLessonRepository implements LessonRepositoryInterface {
-  public function getAll()
-  {
-    
-    return Lesson::all()->toArray(); // violates the LSP
-  }
-}
-
-function foo(LessonRepositoryInterface $lesson)
+/* Start */
+class VideoPlayer
 {
-  $lessons = $lesson->getAll();
+    public function play($file)
+    {
+        // play the video
+    }
 }
 
-// ---End
+class AviVideoPlayer extends VideoPlayer
+{
+    public function play($file)
+    {
+        if (pathinfo($file, PATHINFO_EXTENSION) !== 'avi') {
+            throw new Exception; // violates the LSP
+        }
+    }
+}
+/* End */
+
+/* Start */
+interface LessonRepository
+{
+    /**
+     * Fetch all records
+     * @return array
+     */
+    public function getAll();
+}
+
+class FileLessonRepository implements LessonRepository
+{
+    public function getAll()
+    {
+        // return through file system
+        return [];
+    }
+}
+
+class DbLessonRepository implements LessonRepository
+{
+    public function getAll()
+    {
+        return Lesson::all()->toArray(); // Lesson::all() violates the LSP it must be an array
+    }
+}
+
+/**
+ * Always make sure the output of your implementation match what is
+ * specified in the contract
+ * @param  LessonRepository $lesson
+ * @return [array]
+ */
+function foo(LessonRepository $lesson)
+{
+    $lesson = $lesson->getAll();
+}
+/* End */
