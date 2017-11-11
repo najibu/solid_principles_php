@@ -41,6 +41,14 @@ The knowledge that one object has over another object.
 
 5. Dependency Inversion <br />
 There's a common misunderstanding that "dependency inversion" is simply another way to say "dependency injection." However, the two are not the same.
+High level code depends upon abstractions, not on concretions.
+Dependency inversion does not equal dependency injection.
+High level modules should not depend on low level modules instead they should depend upon abstractions or contract or an interface.
+Low level module too should depend upon abstraction.
+All of this is about decoupling code.
+High level is code that isn't concerned with specific details.
+Low level code is more concerned with details and specifics.
+IOC(Inversion of control): who exactly is in control
 <br />
 
 
