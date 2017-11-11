@@ -36,6 +36,7 @@ Conclusion:
 
 4. Interface Segregation <br />
 The Interface Segregation Principle states that a client should never be forced to implement an interface that it doesn’t use. As you'll find, this all comes down to knowledge.
+The knowledge that one object has over another object.
 <br />
 
 5. Dependency Inversion <br />
